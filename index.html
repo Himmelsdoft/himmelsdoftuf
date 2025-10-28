@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himmelsdoft UF – Formade Stearinljus</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fffaf7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f9e3e3, #fff3ec);
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #6b3e26;
+      font-size: 2.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    p.subtitle {
+      color: #8b5e3b;
+      font-size: 1.1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 0.8rem 0 0.3rem;
+      color: #5c3825;
+    }
+
+    .price {
+      color: #b35b31;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: #b35b31;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #8b3f21;
+    }
+
+    .swish-box {
+      display: none;
+      background: #fff5f0;
+      border: 2px dashed #b35b31;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    .swish-box h3 {
+      margin-top: 0;
+      color: #6b3e26;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #f5e8e1;
+      color: #6b3e26;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SIDHUVUD -->
+  <header>
+    <h1>Himmelsdoft UF</h1>
+    <p class="subtitle">Formade stearinljus – 300 kr/st</p>
+  </header>
+
+  <!-- PRODUKTER -->
+  <section class="product-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1607082349566-187342145cd8?auto=format&fit=crop&w=600&q=60" alt="Hjärtformat ljus">
+      <h3>Hjärtformad Kärlek</h3>
+      <p class="price">300 kr</p>
+      <button class="button" onclick="showSwish('Hjärtformad Kärlek')">Beställ nu</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1619193665533-ef1c6b46c6c2?auto=format&fit=crop&w=600&q=60" alt="Blomformat ljus">
+      <h3>Blomsterdröm</h3>
+      <p class="price">300 kr</p>
+      <button class="button" onclick="showSwish('Blomsterdröm')">Beställ nu</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1621784563330-9c481dbd9aa3?auto=format&fit=crop&w=600&q=60" alt="Spiralformat ljus">
+      <h3>Spiralglöd</h3>
+      <p class="price">300 kr</p>
+      <button class="button" onclick="showSwish('Spiralglöd')">Beställ nu</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1603791453209-c4c9b4c8a0b3?auto=format&fit=crop&w=600&q=60" alt="Stjärnformat ljus">
+      <h3>Stjärnljus</h3>
+      <p class="price">300 kr</p>
+      <button class="button" onclick="showSwish('Stjärnljus')">Beställ nu</button>
+    </div>
+  </section>
+
+  <!-- SWISH INFO -->
+  <div class="swish-box" id="swishInfo">
+    <h3>Tack för din beställning 💫</h3>
+    <p>Swisha <strong>300 kr</strong> till:</p>
+    <h2 style="color:#b35b31;">072 449 17 95</h2> <!-- 🔁 BYT TILL ERT RIKTIGA SWISH-NUMMER -->
+    <p>Ange meddelande: <span id="productName" style="font-weight:bold;"></span></p>
+    <p>Vi bekräftar din beställning via sms eller mejl när betalningen mottagits.</p>
+  </div>
+
+  <!-- SIDFOT -->
+  <footer>
+    © 2025 Himmelsdoft UF – Formade stearinljus med kärlek
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function showSwish(product) {
+      document.getElementById("productName").textContent = product;
+      document.getElementById("swishInfo").style.display = "block";
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
